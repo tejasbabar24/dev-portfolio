@@ -15,7 +15,7 @@ export function ContactBoy(props) {
   const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene]);
   const { nodes, materials } = useGraph(clone);
 
-  const {animations} = useFBX("public/models/Waving.fbx")
+  const {animations} = useFBX("/public/models/Waving.fbx")
   animations[0].name = "Hello"
 
   const action = useAnimations(animations, group )
