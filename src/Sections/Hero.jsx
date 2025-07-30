@@ -1,6 +1,7 @@
   import React from "react";
   import GradientSphere from "../Components/GradientSphere";
   import '../index.css'
+import HeroExperience from "../Components/HeroExperience";
 
   export default function Hero() {
     return (
@@ -31,6 +32,9 @@
               </div>
             </div>
           </div>
+        </div>
+        <div className="w-full h-full absolute inset-0 ">
+          <HeroExperience/>
         </div>
       </section>
     );
