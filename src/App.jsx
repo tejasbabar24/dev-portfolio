@@ -5,6 +5,7 @@ import TechStack from './Sections/TechStack'
 import Project from './Sections/Project'
 import Testimonials from './Sections/Testimonials'
 import Contact from './Sections/Contact'
+import Footer from './Components/Footer'
 
 
 
@@ -19,6 +20,7 @@ function App() {
       <Project/>
       <Testimonials/>
       <Contact/>
+      <Footer/>
     </>
   )
 }

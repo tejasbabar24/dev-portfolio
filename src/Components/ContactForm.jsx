@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as Z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import emailjs from "@emailjs/browser";
 
 export default function ContactForm() {
+  const [loading , setLoading] = useState(false)
   const initialValues = {
     name: "",
     email: "",
@@ -23,12 +24,14 @@ export default function ContactForm() {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm({
     defaultValues: initialValues,
     resolver: zodResolver(contactFormSchema),
   });
 
   const onSubmit = async (data) => {
+    setLoading(true)  
     try {
       const payload = {
         title: data.subject,
@@ -47,6 +50,8 @@ export default function ContactForm() {
       console.log(" failed to send message , please try again");     
     } finally {
       alert(" Email send Successfully")
+      reset(initialValues);
+      setLoading(false)
     }
   };
 
@@ -127,9 +132,10 @@ export default function ContactForm() {
 
         <button
           type="submit"
-          className=" cursor-pointer w-full py-4 bg-blue-50 text-white-50 font-semibold rounded-md hover:bg-blue-600 transition-all duration-700"
+          disabled={loading}
+          className={`" disabled:opacity-70 cursor-pointer w-full py-4 bg-blue-50 text-white-50 font-semibold rounded-md hover:bg-blue-600 transition-all duration-700"`}
         >
-          Sent Message
+         { loading ? "sending.." :" Sent Message"}
         </button>
       </form>
     </div>
