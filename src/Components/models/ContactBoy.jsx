@@ -11,11 +11,11 @@ import { SkeletonUtils } from "three-stdlib";
 
 export function ContactBoy(props) {
   const group = useRef();
-  const { scene } = useGLTF("/public/models/tejasModel-transformed.glb");
+  const { scene } = useGLTF("/models/tejasModel-transformed.glb");
   const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene]);
   const { nodes, materials } = useGraph(clone);
 
-  const {animations} = useFBX("/public/models/Waving.fbx")
+  const {animations} = useFBX("/models/Waving.fbx")
   animations[0].name = "Hello"
 
   const action = useAnimations(animations, group )
@@ -94,4 +94,4 @@ export function ContactBoy(props) {
   );
 }
 
-useGLTF.preload("/public/models/tejasModel-transformed.glb");
+useGLTF.preload("/models/tejasModel-transformed.glb");
