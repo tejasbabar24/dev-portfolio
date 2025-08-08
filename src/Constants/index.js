@@ -23,23 +23,23 @@ const navItems = [
   
   const bentoSocialLinks = [
     {
-      name: "Facebook",
-      href: "https://www.facebook.com/",
-      icon: "/images/fb.svg",
+      name: "GitHub",
+      href: "https://github.com/tejasbabar24",
+      icon: "/images/icons8-github.svg",
     },
     {
       name: "Instagram",
-      href: "https://www.facebook.com/",
+      href: "https://www.instagram.com/tejasbabar24/",
       icon: "/images/insta.svg",
     },
     {
       name: "LinkedIn",
-      href: "https://www.facebook.com/",
+      href: "https://www.linkedin.com/in/tejasbabar24/",
       icon: "/images/linkedin.svg",
     },
     {
       name: "WhatsApp",
-      href: "https://www.facebook.com/",
+      href: "https://wa.me/918928473062",
       icon: "/images/whatsapp.svg",
     },
   ];
@@ -169,7 +169,7 @@ const navItems = [
     },
     {
       name: "LinkedIn",
-      href: "https://www.facebook.com/",
+      href: "www.linkedin.com/in/tejasbabar",
       icon: "/images/b-linked.svg",
     },
     {
